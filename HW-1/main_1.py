@@ -96,10 +96,10 @@ class PassengerPlane:
 
     def change_height(self, delta_height):
         self.current_height += delta_height
-        return self.current_height
+
     def change_speed(self, delta_speed):
         self.current_speed += delta_speed
-        return self.current_speed
+
 
     def info(self):
         print(f"Информация о самолете: производитель : {self.creator}, модель:  {self.model}, вместимость: {self.capacity}, "
@@ -123,3 +123,33 @@ class PassengerPlane:
 # Удалить трек из альбома – операция, принимает на вход название трека в формате строки и удаляет трек, если он имеется.
 # Воспроизвести трек – операция, принимает на вход название трека и имитирует его воспроизведение выводом информации
 # на консоль.
+
+class MusicAlbum:
+    def __init__(self, singer, album, genre, list_tracs):
+        """
+
+        :param singer: str
+        :param album: str
+        :param genre: str
+        :param list_tracs: list
+        """
+        self.singer = singer
+        self.album = album
+        self.genre = genre
+        self.list_tracs = list_tracs
+
+    def add_track(self, new_track):
+        self.list_tracs.append(new_track)
+
+    def del_track(self, del_track):
+        self.list_tracs.remove(del_track)
+
+    def play_track(self, name_track):
+        if name_track in self.list_tracs:
+            print(f"СЕЙЧАС ИГРАЕТ ТРЕК <<{name_track}>>")
+        else:
+            print(f"Такой трек отсутствует в списке,  воспроизвести невозможно")
+    def info(self):
+        print(f"Информация о альбоме: исполнитель : {self.singer}, альбом:  {self.album}, жанр: {self.genre}, "
+                f"трэки: {self.list_tracs}")
+
