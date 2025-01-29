@@ -20,19 +20,13 @@ class Date:
 
 
 class Patient:
-    def __init__(self, name, age, illness):
-        """
-        :param name: str
-        :param age: int
-        :param illness: str
-        """
+    def __init__(self, name: str, age: int, illness: str):
+
         self.name = name
         self.age = age
         self.illness = illness
 
-    def record(self):
-        date = input("Введите дату приема в формате ДД.ММ:   ")
-        time = input("Введите время приема в формате ЧЧ.ММ:   ")
+    def record(self, date, time):
         month = date[0:2]
         day = date[3:]
         hours = time[0:2]
@@ -46,6 +40,6 @@ class Patient:
 
 p1 = Patient("Коля", 35,"грипп")
 
-p1.record()
+p1.record("15.03", "15.35")
 print()
 print(p1)

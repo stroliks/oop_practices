@@ -11,17 +11,14 @@ import math
 # Операция вывода на экран (**`__str__`**) должна отображать дробь в формате "числитель/знаменатель" или "целое число", если знаменатель равен 1.
 
 class Fraction:
-    def __init__(self, nom, denom):
-        """
-        :param nom: int
-        :param denom: int
-        """
+    def __init__(self, nom: int, denom: int):
+
         self.nom = nom
+        if denom == 0:
+            raise ValueError("Делитель не может быть нулём!!")
         self.denom = denom
 
     def __add__(self, other):
-        if self.denom == 0 or other.denom == 0:
-            return "На 0 делить нельзя!!!"
         denom = self.denom * other.denom
         nom = self.nom * (denom / self.denom) + other.nom * (denom / other.denom)
         while denom % 2 == 0 and  nom % 2 == 0:
@@ -31,8 +28,6 @@ class Fraction:
         return new_fraction
 
     def __sub__(self, other):
-        if self.denom == 0 or other.denom ==0:
-            return "На 0 делить нельзя!!!"
         denom = self.denom * other.denom
         nom = self.nom * (denom / self.denom) - other.nom * (denom / other.denom)
         while denom % 2 == 0 and  nom % 2 == 0:
@@ -42,8 +37,6 @@ class Fraction:
         return new_fraction
 
     def __mul__(self, other):
-        if self.denom == 0 or other.denom ==0:
-            return "На 0 делить нельзя!!!"
         denom = self.denom * other.denom
         nom = self.nom * other.nom
         while denom % 2 == 0 and  nom % 2 == 0:
@@ -62,7 +55,7 @@ class Fraction:
 
 f1 = Fraction(7,16)
 
-f2 = Fraction(8,12)
+f2 = Fraction(8,15)
 
 print(f1+f2)
 print(f1-f2)

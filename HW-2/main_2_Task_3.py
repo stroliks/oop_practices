@@ -20,17 +20,8 @@
 # Операции передвижения и изменения размера должны осуществлять проверку на пересечение границ экрана. Границы экрана принять 1960х1080.
 
 class ModelWindow:
-    def __init__(self, name, x, y, lenght, high, color, visible = True, frame = True):
-        """
-        :param name: str
-        :param x: int
-        :param y: int
-        :param lenght: int
-        :param high: int
-        :param color: str
-        :param visible: bool
-        :param frame: bool
-        """
+    def __init__(self, name: str, x: int, y: int, lenght: int, high: int, color: str, is_visible: bool = True, frame: bool = True):
+
 
         self.name = name
         self.x = x
@@ -38,7 +29,7 @@ class ModelWindow:
         self.lenght = lenght
         self.high = high
         self.color = color
-        self.visible = visible
+        self.is_visible = is_visible
         self.frame = frame
 
     def move_horiz(self, delta_x):
@@ -55,9 +46,7 @@ class ModelWindow:
         else:
             print(f"невозможно передвинуть окно по вертикали на {delta_y} (выход за границу!!)")
 
-    def change_size(self):
-        delta_len = int(input("Изменить длину на :   "))
-        delta_high = int(input("Изменить высоту на :   "))
+    def change_size(self, delta_len, delta_high):
         x_right = self.x + self.lenght
         if x_right + delta_len <= 1960 and self.y + delta_high <= 1080:
             self.lenght += delta_len
@@ -78,7 +67,7 @@ class ModelWindow:
 
     def __str__(self):
         return (f"заголовок:  {self.name}\nкоординаты верхнего левого угла: х = {self.x}, у = {self.y} \nразмеры: {self.lenght} х {self.high} \n"
-                f"цвет: {self.color} \nвидимость: {"Да" if self.visible == True else "Нет"} \nрамка: {"Да" if self.frame == True else "Нет"}   ")
+                f"цвет: {self.color} \nвидимость: {"Да" if self.is_visible == True else "Нет"} \nрамка: {"Да" if self.frame == True else "Нет"}   ")
 
 
 
@@ -87,5 +76,5 @@ p1 = ModelWindow("Окно1", 300,600, 600, 300, "green", True, True)
 
 print()
 print(p1)
-p1.change_size()
+p1.change_size(50, 80)
 print(p1)

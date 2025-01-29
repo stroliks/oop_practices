@@ -12,19 +12,14 @@ import math
 # Операция вывода на экран (**`__str__`**) должна представлять вектор в форме "(x, y, z)".
 
 class Vector:
-    def __init__(self, x, y, z):
-        """
+    def __init__(self, x: float, y: float, z: float):
 
-        :param x: float
-        :param y: float
-        :param z: float
-        """
         self.x = x
         self.y = y
         self.z = z
 
 
-    def len_vector(self):
+    def len_vector(self) -> float:
         len_ = math.sqrt(self.x**2 + self.y**2 + self.z**2)
         return len_
 
@@ -45,9 +40,6 @@ class Vector:
             y_m = self.z * other.x - self.x * other.z
             z_m = self.x * other.y - self.y * other.x
             return f"({x_m}, {y_m}, {z_m})"
-
-
-
 
     def __str__(self):
         return f"({self.x}, {self.y}, {self.z})"

@@ -5,18 +5,13 @@
 # Реализовать операции: «посетить место», которая принимает имя посетителя и выводит уведомление о посещении.
 # Реализовать метод вывода информации о туристическом месте на экран, который аккумулирует состояние полей объекта.
 class TouristSpot:
-    def __init__(self, name, country, type):
-        """
-        :param name: str
-        :param country: str
-        :param type: str
-        """
+    def __init__(self, name: str, country: str, type: str):
+
         self.name = name
         self.country = country
         self.type = type
 
-    def visit(self):
-        client = input("Введите имя клиента:   ")
+    def visit(self, client):
 
         print(f"Клиент {client} записан на посещение достопримечательности: {self.name}")
 
@@ -25,6 +20,6 @@ class TouristSpot:
 
 p1 = TouristSpot("Горы", "Россия","страшно")
 
-p1.visit()
+p1.visit("Коля")
 print()
 print(p1)

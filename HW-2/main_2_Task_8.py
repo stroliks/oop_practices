@@ -12,12 +12,8 @@ import math
 
 class Time:
 
-    def __init__(self, hour, min, sec):
-        """
-        :param hour: int
-        :param min: int
-        :param sec: int
-        """
+    def __init__(self, hour: int, min: int, sec: int):
+
         self.hour = hour
         self.min = min
         self.sec = sec
