@@ -14,35 +14,35 @@ import math
 class Vector:
     def __init__(self, x: float, y: float, z: float):
 
-        self.x = x
-        self.y = y
-        self.z = z
+        self.__x = x
+        self.__y = y
+        self.__z = z
 
 
     def len_vector(self) -> float:
-        len_ = math.sqrt(self.x**2 + self.y**2 + self.z**2)
+        len_ = math.sqrt(self.__x**2 + self.__y**2 + self.__z**2)
         return len_
 
     def __add__(self, other):
-        x = self.x + other.x
-        y = self.y + other.y
-        z = self.z + other.z
+        x = self.__x + other.__x
+        y = self.__y + other.__y
+        z = self.__z + other.__z
         return f"({x}, {y}, {z})"
 
     def __sub__(self, other):
-        x = self.x - other.x
-        y = self.y - other.y
-        z = self.z - other.z
+        x = self.__x - other.__x
+        y = self.__y - other.__y
+        z = self.__z - other.__z
         return f"({x}, {y}, {z})"
 
     def __mul__(self, other):
-            x_m = self.y * other.z - self.z * other.y
-            y_m = self.z * other.x - self.x * other.z
-            z_m = self.x * other.y - self.y * other.x
+            x_m = self.__y * other.__z - self.__z * other.__y
+            y_m = self.__z * other.__x - self.__x * other.__z
+            z_m = self.__x * other.__y - self.__y * other.__x
             return f"({x_m}, {y_m}, {z_m})"
 
     def __str__(self):
-        return f"({self.x}, {self.y}, {self.z})"
+        return f"({self.__x}, {self.__y}, {self.__z})"
 
 p1 = Vector(2,5,6)
 

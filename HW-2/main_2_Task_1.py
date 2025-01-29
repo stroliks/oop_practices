@@ -7,24 +7,24 @@
 
 class Date:
     def __init__(self, month, day, hours, minute):
-        self.month = month
-        self.day = day
-        self.hours = hours
-        self.minute = minute
+        self.__month = month
+        self.__day = day
+        self.__hours = hours
+        self.__minute = minute
 
     def date(self):
-        return f"{self.day}.{self.month}"
+        return f"{self.__day}.{self.__month}"
 
     def time(self):
-        return f"{self.hours}:{self.minute}"
+        return f"{self.__hours}:{self.__minute}"
 
 
 class Patient:
     def __init__(self, name: str, age: int, illness: str):
 
-        self.name = name
-        self.age = age
-        self.illness = illness
+        self.__name = name
+        self.__age = age
+        self.__illness = illness
 
     def record(self, date, time):
         month = date[0:2]
@@ -33,10 +33,10 @@ class Patient:
         minute = time[3:]
         d1 = Date(month, day, hours, minute)
 
-        print(f"Клиент {self.name} записан на прием на дату: {d1.date()}, на время: {d1.time()}")
+        print(f"Клиент {self.__name} записан на прием на дату: {d1.date()}, на время: {d1.time()}")
 
     def __str__(self):
-        return f"Пациент: {self.name} \n Возраст:  {self.age} лет \n Заболевание:  {self.illness}"
+        return f"Пациент: {self.__name} \n Возраст:  {self.__age} лет \n Заболевание:  {self.__illness}"
 
 p1 = Patient("Коля", 35,"грипп")
 

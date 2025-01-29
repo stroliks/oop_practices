@@ -7,16 +7,16 @@
 class TouristSpot:
     def __init__(self, name: str, country: str, type: str):
 
-        self.name = name
-        self.country = country
-        self.type = type
+        self.__name = name
+        self.__country = country
+        self.__type = type
 
     def visit(self, client):
 
-        print(f"Клиент {client} записан на посещение достопримечательности: {self.name}")
+        print(f"Клиент {client} записан на посещение достопримечательности: {self.__name}")
 
     def __str__(self):
-        return f"Достопримечательность: {self.name} \nСтрана:  {self.country} \nТип:  {self.type}"
+        return f"Достопримечательность: {self.__name} \nСтрана:  {self.__country} \nТип:  {self.__type}"
 
 p1 = TouristSpot("Горы", "Россия","страшно")
 

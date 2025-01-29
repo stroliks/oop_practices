@@ -14,12 +14,12 @@ class Time:
 
     def __init__(self, hour: int, min: int, sec: int):
 
-        self.hour = hour
-        self.min = min
-        self.sec = sec
+        self.__hour = hour
+        self.__min = min
+        self.__sec = sec
 
     def __add__(self, other):
-        summ_sec = (self.hour + other.hour) * 3600 + (self.min + other.min) * 60 + self.sec + other.sec
+        summ_sec = (self.__hour + other.__hour) * 3600 + (self.__min + other.__min) * 60 + self.__sec + other.__sec
         new_hour = summ_sec//3600
         new_min = (summ_sec % 3600) // 60
         new_sec = (summ_sec % 3600) % 60
@@ -27,7 +27,7 @@ class Time:
         return time
 
     def __sub__(self, other):
-        summ_sec = (self.hour - other.hour) * 3600 + (self.min - other.min) * 60 + self.sec - other.sec
+        summ_sec = (self.__hour - other.__hour) * 3600 + (self.__min - other.__min) * 60 + self.__sec - other.__sec
         new_hour = abs(summ_sec)//3600
         new_min = abs(summ_sec) % 3600 // 60
         new_sec = (abs(summ_sec) % 3600) % 60
@@ -37,7 +37,7 @@ class Time:
         return f"-{time}"
 
     def __mul__(self, other):
-        summ_sec = (self.hour  * 3600 + self.min * 60 + self.sec) * other
+        summ_sec = (self.__hour  * 3600 + self.__min * 60 + self.__sec) * other
         new_hour = summ_sec//3600
         new_min = (summ_sec % 3600) // 60
         new_sec = (summ_sec % 3600) % 60
@@ -45,13 +45,13 @@ class Time:
         return time
 
     def __str__(self):
-        if self.hour < 10:
-            self.hour = f"0{self.hour}"
-        if self.min < 10:
-            self.min = f"0{self.min}"
-        if self.sec < 10:
-            self.sec = f"0{self.sec}"
-        return f"{self.hour}:{self.min}:{self.sec}"
+        if self.__hour < 10:
+            self.__hour = f"0{self.__hour}"
+        if self.__min < 10:
+            self.__min = f"0{self.__min}"
+        if self.__sec < 10:
+            self.__sec = f"0{self.__sec}"
+        return f"{self.__hour}:{self.__min}:{self.__sec}"
 
 
 t1 = Time(1,20,2)

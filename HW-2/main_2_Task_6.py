@@ -13,14 +13,14 @@ import math
 class Fraction:
     def __init__(self, nom: int, denom: int):
 
-        self.nom = nom
+        self.__nom = nom
         if denom == 0:
             raise ValueError("Делитель не может быть нулём!!")
-        self.denom = denom
+        self.__denom = denom
 
     def __add__(self, other):
-        denom = self.denom * other.denom
-        nom = self.nom * (denom / self.denom) + other.nom * (denom / other.denom)
+        denom = self.__denom * other.__denom
+        nom = self.__nom * (denom / self.__denom) + other.__nom * (denom / other.__denom)
         while denom % 2 == 0 and  nom % 2 == 0:
             denom /= 2
             nom /= 2
@@ -28,8 +28,8 @@ class Fraction:
         return new_fraction
 
     def __sub__(self, other):
-        denom = self.denom * other.denom
-        nom = self.nom * (denom / self.denom) - other.nom * (denom / other.denom)
+        denom = self.__denom * other.__denom
+        nom = self.__nom * (denom / self.__denom) - other.__nom * (denom / other.__denom)
         while denom % 2 == 0 and  nom % 2 == 0:
             denom /= 2
             nom /= 2
@@ -37,8 +37,8 @@ class Fraction:
         return new_fraction
 
     def __mul__(self, other):
-        denom = self.denom * other.denom
-        nom = self.nom * other.nom
+        denom = self.__denom * other.__denom
+        nom = self.__nom * other.__nom
         while denom % 2 == 0 and  nom % 2 == 0:
             denom /= 2
             nom /= 2
@@ -47,11 +47,11 @@ class Fraction:
 
 
     def __str__(self):
-        if self.nom == self.denom:
+        if self.__nom == self.__denom:
             return f"1"
-        elif self.denom == 1:
-            return f"{self.nom}"
-        return f"{self.nom}/{self.denom}"
+        elif self.__denom == 1:
+            return f"{self.__nom}"
+        return f"{self.__nom}/{self.__denom}"
 
 f1 = Fraction(7,16)
 
