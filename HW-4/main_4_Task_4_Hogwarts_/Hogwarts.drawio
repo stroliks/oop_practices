@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 YaBrowser/24.12.0.0 Safari/537.36" version="26.0.10">
+  <diagram name="Страница — 1" id="aP-bYJqyAeypJRkswwu1">
+    <mxGraphModel dx="1100" dy="1758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LRzEMWB-eHPD9QgthW54-1" value="HogwartsStudent" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="-2" width="230" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-16" value="- name: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="26" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-2" value="- house: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="50" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-17" value="- mana: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="74" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-18" value="- spells: list [Spell]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="98" width="230" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="122" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-4" value="+ learn_spell(spell: Spell): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="130" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-19" value="+ cast_spell(spell: Spell): spell" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry y="156" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-5" value="Spell" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="20" width="230" height="138" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-8" value="- title: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry y="26" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-6" value="- description: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry y="52" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-22" value="- value_mana: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry y="78" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry y="104" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-21" value="+ cast(target:&amp;nbsp;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;HogwartsStudent&lt;/span&gt;&amp;nbsp;):" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry y="112" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-25" value="Hogwarts" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="-310" width="450" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-26" value="- students: list [HogwartsStudents]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="26" width="450" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-27" value="- spells: list [Spell]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="50" width="450" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-30" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="74" width="450" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-31" value="+ enroll_student(student: HogwartsStudents): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="82" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-32" value="+ teach_spell(spell: Spell): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="108" width="450" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-33" value="+ simulate_duel (student1: HogwartsStudents, student2: HogwartsStudents): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="LRzEMWB-eHPD9QgthW54-25">
+          <mxGeometry y="134" width="450" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-34" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=1.004;exitY=0.888;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.467;entryY=-0.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LRzEMWB-eHPD9QgthW54-27" target="LRzEMWB-eHPD9QgthW54-5">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="590" y="-60" as="sourcePoint" />
+            <mxPoint x="750" y="-60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-35" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;*&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LRzEMWB-eHPD9QgthW54-34">
+          <mxGeometry x="0.3218" y="4" relative="1" as="geometry">
+            <mxPoint x="19" y="95" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-36" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;exitX=-0.008;exitY=1.125;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LRzEMWB-eHPD9QgthW54-27" target="LRzEMWB-eHPD9QgthW54-1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="100" y="-190" as="sourcePoint" />
+            <mxPoint x="205" y="66" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-37" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;*&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="LRzEMWB-eHPD9QgthW54-36">
+          <mxGeometry x="0.3218" y="4" relative="1" as="geometry">
+            <mxPoint x="19" y="95" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LRzEMWB-eHPD9QgthW54-38" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;strokeColor=default;edgeStyle=orthogonalEdgeStyle;entryX=0.435;entryY=0.865;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LRzEMWB-eHPD9QgthW54-19" target="LRzEMWB-eHPD9QgthW54-21">
+          <mxGeometry x="0.0032" y="14" relative="1" as="geometry">
+            <mxPoint x="140.00000000000003" y="244.49800000000005" as="sourcePoint" />
+            <mxPoint x="836.27" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="135" y="210" />
+              <mxPoint x="810" y="210" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
