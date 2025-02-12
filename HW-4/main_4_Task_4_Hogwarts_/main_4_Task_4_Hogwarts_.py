@@ -3,29 +3,33 @@ from __future__ import annotations
 import random
 
 class Hogwarts:
-    def __init__(self,students=None, spells=None):
-        self.__students = students or []
+    def __init__(self,student=None, spells=None):
+        self.__students = student or []
         self.__spells = spells or []
 
     def enroll_student(self, student):
-        self.__students.append(student.get_name())
+        self.__students.append(student)
 
     def teach_spell(self, spell: Spell):
-        self.__spells.append(spell.get_title())
+        self.__spells.append(spell)
 
-    def simulate_duel(self, student1, student2):
-        while student1.get_mana() > 0 or student2.get_mana() > 0 or student2.get_health() > 0 or student1.get_health() > 0:
+    @staticmethod
+    def simulate_duel(student1:HogwartsStudent, student2:HogwartsStudent):
+        while student1.get_mana() > 0 and student2.get_mana() > 0 and student2.get_health() > 0 and student1.get_health() > 0:
             spell_1 = student1.cast_spell()
             student1.set_mana(student1.get_mana() - spell_1.get_mana())
-            student2.take_spell(spell_1)
+            student2.take_spell(spell_1, student2)
             spell_2 = student2.cast_spell()
             student2.set_mana(student2.get_mana() - spell_2.get_mana())
-            student1.take_spell(spell_2)
+            student1.take_spell(spell_2, student1)
             # вывод значений  чтобы отследить процесс сражения
-            print(f"игрок_1 мана {student1.get_mana()}, здоровье {student1.get_health}   игрок_2 мана {student2.get_mana()}, здоровье {student2.get_health}")
-        if student1.get_mana() < 0 or student1.get_health() < 0:
-            return f"победитель {student2.get_name()}"
-        return f"победитель {student1.get_name()}"
+            print(f" {student1.get_name()} мана {student1.get_mana()}, здоровье {student1.get_health()} ||| {student2.get_name()} мана {student2.get_mana()}, здоровье {student2.get_health()}")
+        print()
+        if student1.get_mana() <= 0 or student1.get_health() <= 0:
+            print(f" победитель {student2.get_name()}")
+            return
+        print(f" победитель {student1.get_name()}")
+        return
 
 
 class HogwartsStudent:
@@ -58,14 +62,13 @@ class HogwartsStudent:
         self.__health = health
 
     def learn_spell(self, spell: Spell):
-        self.__spells.append(spell.get_title())
+        self.__spells.append(spell)
 
     def cast_spell(self):
         spell = random.choice(self.__spells)
         return spell
 
-    def take_spell(self, spell):
-        if spell.cast() == self.__name:
+    def take_spell(self, spell, target):
             if spell.get_title() == "damage":
                 self.set_health(self.__health - 10)
 
@@ -90,7 +93,7 @@ class Spell:
         return target
 
 damage = Spell("damage", "Урон", 10)
-simple_spell = Spell("damage", "Урон", 15)
+simple_spell = Spell("simple", "<Без урона жизни", 15)
 bob = HogwartsStudent("Bob", "FAT")
 coc = HogwartsStudent("Coc", "FEVT")
 ror = HogwartsStudent("Roc", "ATF")
