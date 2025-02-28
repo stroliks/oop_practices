@@ -26,6 +26,7 @@ class Element(ABC):
 
 
 class Client(Element):
+
     def __init__(self, name, accounts=None):
         super().__init__(name)
         self._accounts = [] or accounts
@@ -39,8 +40,6 @@ class Client(Element):
     def remove(self, account):
         self._accounts.remove(account)
 
-    def add_account(self, acc):
-        self._accounts.append(acc)
 
     def __repr__(self):
         return f" имя {self.get_name()} счет {self._accounts}"
@@ -84,10 +83,12 @@ class Manager(Employee):
 
 
 class Account():
-    def __init__(self, number, type_account, client):
+    def __init__(self, number, type_account):
+
         self._number = number
         self.__type_account = type_account
-        self.__client = client
+        self.__client = Client()
+        client.add()
 
 
     def set_client(self,client):
@@ -99,7 +100,7 @@ class Account():
 client1 = Client("Bob")
 
 
-deb = Account(254, "debit", client1)
+deb = Account(254, "debit")
 
 print(deb)
 

@@ -11,8 +11,8 @@ root.resizable(False, False)
 
 
 def input_data():
-    if not (entry_name.get() is None) and ("@" in entry_mail.get()) and (int(entry_age.get()) > 0):
-        label_result = ttk.Label(text="Данные успешно введены!!!", background="#00322d", font=("Arial", 15))
+    if not (entry_name.get()=="") and ("@" in entry_mail.get()) and (int(entry_age.get()) > 0):
+        label_result = ttk.Label(text="Данные успешно введены!!!", background="#66ff33", font=("Arial", 15))
     else:
         label_result = ttk.Label(text="Введены неверные данные либо поле <<Имя>> не заполнено",  background="#FF033E", font=("Arial", 15))
     label_result.grid(row=7, column=0, columnspan=3, sticky=NSEW)
