@@ -9,57 +9,24 @@ root = Tk()
 root.title("6_4 Конвертер валют")
 root.geometry("450x315")
 root.resizable(False, False)
+currency = ["USD", "RUB", "EUR", "GBP"]
+courses = [90,1,100,150]
 
-def selected_1():
-    currency_values = [90, 1, 100, 120]
-    currency_1 = combobox1.get()
-    if currency_1 == 'USD':
-        val_1 = 90
-    if currency_1 == 'RUB':
-        val_1 = 1
-    if currency_1 == 'EUR':
-        val_1 = 100
-    if currency_1 == 'GBP':
-        val_1 = 150
-    amount_currency_1 = entry_currency1.get()
-    currency_2 = combobox2.get()
-    if currency_2 == 'USD':
-        val_2 = 90
-    if currency_2 == 'RUB':
-        val_2 = 1
-    if currency_2 == 'EUR':
-        val_2 = 100
-    if currency_2 == 'GBP':
-        val_2 = 150
-    amount_currency_2 = ((val_1 * int(amount_currency_1)) / val_2)
+def selected_1(event):
+    val_2 = courses[currency.index(text2.get())]
+    amount_currency_2 = float(entry_currency2.get())
+    val_1 = courses[currency.index(text1.get())]
+    amount_currency_1 = ((val_2 * amount_currency_2) / val_1)
+    text_entry1.set(str(amount_currency_1))
+    entry_currency1.configure(textvariable=text_entry1)
 
-    entry_currency2.configure(textvariable=amount_currency_2)
-
-def selected_2():
-    currency_values = [90,1,100,120]
-    currency_2 = combobox2.get()
-    if currency_2=='USD':
-        val_2 = 90
-    if currency_2 == 'RUB':
-        val_2 = 1
-    if currency_2 == 'EUR':
-        val_2 = 100
-    if currency_2 == 'GBP':
-        val_2 = 150
-    amount_currency_2 = entry_currency2.get()
-    currency_1 = combobox1.get()
-    if currency_1 == 'USD':
-        val_1 = 90
-    if currency_1 == 'RUB':
-        val_1 = 1
-    if currency_1 == 'EUR':
-        val_1 = 100
-    if currency_1 == 'GBP':
-        val_1 = 150
-    amount_currency_1 = ((val_2 * int(amount_currency_2)) / val_1)
-
-    entry_currency1.configure(textvariable=amount_currency_1)
-
+def selected_2(event):
+    val_1 = courses[currency.index(text1.get())]
+    amount_currency_1 = float(entry_currency1.get())
+    val_2 = courses[currency.index(text2.get())]
+    amount_currency_2 = ((val_1 * amount_currency_1) / val_2)
+    text_entry2.set(str(amount_currency_2))
+    entry_currency2.configure(textvariable=text_entry2)
 
 
 label_name = ttk.Label(text="WELCOME", font = ("Arial", 18), foreground="#FF033E")
@@ -68,22 +35,23 @@ label_name.place(x=30, y=30, anchor=W)
 label_name2 = ttk.Label(text="This is a currency converter", font = ("Arial", 14), foreground="#FF033E")
 label_name2.place(x=30, y=80, anchor=W)
 
-
-entry_currency1 = ttk.Entry(validate="key", validatecommand=selected_1)
+text_entry1=StringVar()
+entry_currency1 = ttk.Entry(textvariable=text_entry1)
 entry_currency1.place(anchor=NW, x=40, y= 130, height=40)
 
-entry_currency2 = ttk.Entry(validate="key", validatecommand=selected_2)
+text_entry2=StringVar()
+entry_currency2 = ttk.Entry(textvariable=text_entry2)
 entry_currency2.place(anchor=NW, x=40, y= 210, height=40)
 
+text1 = StringVar()
+text2 = StringVar()
 
-
-currency = ['USD', 'RUB', 'EUR', 'GBP']
-combobox1 = ttk.Combobox(values=currency)
+combobox1 = ttk.Combobox(textvariable=text1, values=currency, state="readonly")
 combobox1.place(anchor=NE, x=300, y= 130, height=40)
-#combobox1.bind(selected_1)
-combobox2 = ttk.Combobox(values=currency)
+combobox1.bind("<<ComboboxSelected>>",selected_1)
+combobox2 = ttk.Combobox(textvariable=text2, values=currency, state="readonly")
 combobox2.place(anchor=NE, x=300, y= 210, height=40)
-#combobox2.bind(selected_2)
+combobox2.bind("<<ComboboxSelected>>", selected_2)
 
 
 root.mainloop()
