@@ -25,13 +25,19 @@ def submit():
                     f" Email 2: {entry_mail2.get()}\n"
                     f" Пол:   {selected_sex.get()} \n"
                     f" Изучаемые языки :\n {languages}")
+        text2 = "ОК"
+
     else:
         text_window = "Проверьте правильность ввода данных (в электронной почте нет символа @)!!!"
-
+        text2 = "ОК, проверю)"
     label = ttk.Label(window, text=text_window)
     label.pack(anchor=CENTER, expand=1)
+    btn = ttk.Button(window, text=text2, command=window.destroy)
+    btn.pack(anchor=CENTER, expand=1)
 
     window.mainloop()
+
+
 def select():
     result = ""
     if python.get() == 1: result += "     Python\n"
